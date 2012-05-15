@@ -41,23 +41,22 @@ module RSS
     end
 
     def start_element_namespace(name, attributes = [], prefix = nil, uri = nil, ns = [])
-      name = prefix.nil? ? name : "#{prefix}:#{name}"
+      name = [prefix, name].compact.join(':')
       attrs = {}
       attributes.each do |attr|
-        key = (attr.prefix.nil? ? '' : "#{attr.prefix}:") + attr.localname
+        key = [attr.prefix, attr.localname].compact.join(':')
         attrs[key] = attr.value
       end
-      ns.each do |ary|
-        key = 'xmlns'
-        key << ":#{ary[0]}" unless ary[0].nil?
-        attrs[key] = ary[1]
+      ns.each do |(prefix, uri)|
+        key = ['xmlns', prefix].compact.join(':')
+        attrs[key] = uri
       end
 
       tag_start name, attrs
     end
 
     def end_element_namespace(name, prefix = nil, uri = nil)
-      name = prefix.nil? ? name : "#{prefix}:#{name}"
+      name = [prefix, name].compact.join(':')
 
       tag_end name
     end
