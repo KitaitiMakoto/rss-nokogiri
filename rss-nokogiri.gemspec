@@ -4,11 +4,11 @@ require File.expand_path('../lib/rss/nokogiri', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["KITAITI Makoto"]
   gem.email         = ["KitaitiMakoto@gmail.com"]
-  gem.description   = %q{Enable starndard bundled RSS library to use Nokogiri as a parser}
-  gem.summary       = %q{Enable RSS to use Nokogiri}
-  gem.homepage      = ""
+  gem.description   = %q{Enable starndard bundled RSS library to use Nokogiri as a parser.}
+  gem.summary       = %q{Parse RSS/Atom using Nokogiri}
+  gem.homepage      = "https://gitorious.org/rss/nokogiri"
 
-  gem.files         = `git ls-files`.split($\)
+  gem.files         = `git ls-files`.split($\) - ['vendor/ruby']
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "rss-nokogiri"
