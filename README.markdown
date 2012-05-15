@@ -48,4 +48,4 @@ Contributing
 License
 -------
 
-This gem is distributed under the Ruby's license. See COPYING file for the term.
+This library is distributed under the Ruby's license. See the file COPYING for the term.
