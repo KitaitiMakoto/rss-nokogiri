@@ -1,5 +1,4 @@
 require 'rss'
-require 'nokogiri'
 
 module RSS
   class NokogiriParser < BaseParser
@@ -80,7 +79,14 @@ module RSS
     end
   end
 
-  AVAILABLE_PARSER_LIBRARIES << ['rss/nokogiri', :NokogiriParser]
-  AVAILABLE_PARSERS << NokogiriParser
-  Parser.default_parser = NokogiriParser
+  begin
+    lib = 'nokogiri'
+    require lib
+
+    AVAILABLE_PARSER_LIBRARIES << ['rss/nokogiri', :NokogiriParser]
+    AVAILABLE_PARSERS << NokogiriParser
+    Parser.default_parser = NokogiriParser
+  rescue LoadError
+    warn "Couldn't load #{lib}. Falled back to the default parser(#{Parser.default_parser})."
+  end
 end
