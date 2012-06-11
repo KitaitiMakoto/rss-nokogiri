@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["KitaitiMakoto@gmail.com"]
   gem.description   = %q{Enable starndard bundled RSS library to use Nokogiri as a parser.}
   gem.summary       = %q{Parse RSS/Atom using Nokogiri}
-  gem.homepage      = "https://gitorious.org/rss/nokogiri"
+  gem.homepage      = "http://rss-ext.rubyforge.org/"
 
   gem.files         = `git ls-files`.split($\) - ['vendor/ruby']
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
