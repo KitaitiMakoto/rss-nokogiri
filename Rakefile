@@ -6,6 +6,7 @@ require "bundler/gem_tasks"
 task :default => :test
 
 Rake::TestTask.new do |t|
+  t.ruby_opts << '-r rss/nokogiri'
   t.ruby_opts << '-I test/regression'
   t.test_files = FileList['test/**/test_*.rb']
 end
