@@ -77,6 +77,10 @@ module RSS
     def cdata_block(string)
       text(string)
     end
+
+    def processing_instruction(name, content)
+      instruction name, content
+    end
   end
 
   begin
