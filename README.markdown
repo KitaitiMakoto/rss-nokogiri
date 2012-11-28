@@ -1,7 +1,7 @@
 RSS NokogiriParser
 ==================
 
-This gem enable standard bundled RSS library to use [Nokogiri][nokogiri] as parser.
+This gem enables standard bundled RSS library to use [Nokogiri][nokogiri] as parser.
 
 [nokogiri]: http://nokogiri.org/
 
